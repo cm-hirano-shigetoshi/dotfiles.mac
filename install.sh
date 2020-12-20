@@ -19,7 +19,8 @@ zsh() {
 
 nvim() {
     mkdir -p $HOME/.config
-    ln -sf $DOTFILES/nvim $HOME/.config/nvim
+    rm -fr $HOME/.config/nvim
+    ln -s $DOTFILES/nvim $HOME/.config/nvim
     mkdir -p $HOME/.nvim/backup
     if ! which nvim >/dev/null 2>&1; then
         echo "[SKIP] neovim is not installed"
