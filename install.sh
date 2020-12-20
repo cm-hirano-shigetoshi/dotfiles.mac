@@ -3,6 +3,11 @@ set -eu
 
 DOTFILES=$(dirname $(python -c "import os; print(os.path.realpath('$0'))"))
 
+karabiner() {
+    mkdir -p $HOME/.config/karabiner
+    ln -sf $DOTFILES/karabiner.json $HOME/.config/karabiner/karabiner.json
+}
+
 tmux() {
     ln -sf $DOTFILES/.tmux.conf $HOME/.tmux.conf
 }
@@ -13,15 +18,15 @@ zsh() {
 }
 
 nvim() {
-    if ! which nvim >/dev/null 2>&1; then
-        echo "[SKIP] Please install neovim"
-        return
-    fi
     mkdir -p $HOME/.config
     ln -sf $DOTFILES/nvim $HOME/.config/nvim
     mkdir -p $HOME/.nvim/backup
+    if ! which nvim >/dev/null 2>&1; then
+        echo "[SKIP] neovim is not installed"
+    fi
 }
 
+karabiner
 tmux
 zsh
 nvim
