@@ -79,6 +79,7 @@ if [[ -n $TMUX ]]; then
   fi
   if which nvim >/dev/null 2>&1; then
     alias vim='nvim'
+    export EDITOR="nvim"
   fi
 
   #
