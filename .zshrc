@@ -28,9 +28,6 @@ if [[ -n $TMUX ]]; then
   PROMPT='[%{$fg[green]%}%n@%m %{$fg[yellow]%}%d%{$reset_color%}]$(git_super_status)'$'\n''$ '
   # コマンドに色を付ける
   zinit ice wait'!0' silent; zinit light zdharma/fast-syntax-highlighting
-  # fzfymlのインストール
-  #     PATHに直接追加するのか、シンボリックリンクにするかを考える
-  zinit ice wait'!0' as"program" pick"bin/fzfyml3" silent; zinit light cm-hirano-shigetoshi/fzfyml3
   # クリップボード履歴
   zinit ice wait'!0' silent; zinit light cm-hirano-shigetoshi/clipboard-history
   # スニペットの貼り付け機能
