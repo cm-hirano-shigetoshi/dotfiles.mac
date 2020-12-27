@@ -42,33 +42,21 @@ if [[ -n $TMUX ]]; then
   zinit ice wait'!0' src"ninja.zsh" silent; zinit light cm-hirano-shigetoshi/cli-ninja
 
   #
-  # 環境変数的なもの
-  #
-  if [[ $(uname -m) = "arm64" ]]; then
-    export PATH="/opt/homebrew/bin:$PATH"
-  fi
-  if [[ $(uname -m) = "arm64" ]]; then
-    export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-    export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-  fi
-
-  #
   # 一般の設定
   #
   # Ctrl+s（ターミナルロック）を無効化。これがないとCtrl+sを含むキーバインドが無効になる。
   stty stop undef
   # Ctrl+d でターミナルを閉じないようにする
   setopt IGNOREEOF
-  # executableなファイルをbin/masterに置く
-  PATH=":$HOME/bin/master:$PATH"
-  # 実験中のファイルはbin/developに置く
-  PATH="$HOME/bin/develop:$PATH"
   # 特殊文字の中で「単語」の境界として扱う文字を指定
   WORDCHARS="*?.-_[]~&;!#$%^(){}<>"
   # ヒストリにはスペースなどを整形した状態で保存する
   setopt hist_reduce_blanks
   # 直前と同じヒストリは記録しない
   setopt hist_ignore_dups
+
+  # 実験中のファイルはbin/developに置く
+  PATH="$HOME/bin/develop:$PATH"
 
   #
   # 補完の設定
