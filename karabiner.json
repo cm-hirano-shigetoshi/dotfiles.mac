@@ -33,7 +33,7 @@
                 },
                 "to": [
                   {
-                    "shell_command": "/usr/local/bin/tmux new-window 'source ~/.system_profile; ~/.zplugin/plugins/cm-hirano-shigetoshi---clipboard-history/main/clipboard.sh'"
+                    "shell_command": "source ~/.zprofile && tmux new-window \"/Users/hirano.shigetoshi/.zinit/plugins/cm-hirano-shigetoshi---clipboard-history/main/clipboard.sh\""
                   }
                 ],
                 "type": "basic"
