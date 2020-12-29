@@ -92,6 +92,10 @@ if [[ -n $TMUX ]]; then
   FZF_DEFAULT_OPTS+=" --bind='ctrl-s:toggle-sort'"
   export FZF_DEFAULT_OPTS
 
+  if [[ $(uname -m) = "arm64" ]]; then
+    alias arm64='arch -arch arm64'
+    alias x86='arch -arch x86_64'
+  fi
 
   if [[ $(uname -m) != "arm64" ]]; then
     export PYENV_ROOT="${HOME}/.pyenv"
