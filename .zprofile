@@ -16,6 +16,6 @@ else
     PATH="/opt/homebrew_x86/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
 
-if [[ -s $HOME/.company_profile ]]; then
-    source $HOME/.company_profile
+if [[ -s $HOME/company/.profile ]]; then
+    source $HOME/company/.profile
 fi
