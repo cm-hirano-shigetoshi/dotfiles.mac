@@ -23,6 +23,8 @@ coreutils() {
     if ! brew list --formula | grep -qFx "gnu-sed"; then
         brew install gnu-sed
     fi
+    rm -f $HOME_BIN/master/uname
+    ln -s /usr/bin/uname $HOME_BIN/master/uname
 }
 
 fzf() {
