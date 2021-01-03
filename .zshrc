@@ -82,16 +82,6 @@ if [[ -n $TMUX ]]; then
     export EDITOR="nvim"
   fi
 
-  #
-  # fzfの設定
-  #
-  FZF_DEFAULT_OPTS=""
-  FZF_DEFAULT_OPTS+=" --exact --no-mouse --ansi"
-  FZF_DEFAULT_OPTS+=" --preview-window=up:wrap"
-  FZF_DEFAULT_OPTS+=" --preview='echo {}'"
-  FZF_DEFAULT_OPTS+=" --bind='ctrl-s:toggle-sort'"
-  export FZF_DEFAULT_OPTS
-
   if [[ $(uname -m) = "arm64" ]]; then
     alias arm64='arch -arch arm64'
     alias x86='arch -arch x86_64'
