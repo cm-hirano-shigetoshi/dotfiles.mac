@@ -66,6 +66,16 @@ nvim() {
     fi
 }
 
+convenient_tools() {
+    if ! which pwgen >/dev/null 2>&1; then
+        brew install pwgen
+    fi
+    if ! which watch >/dev/null 2>&1; then
+        wget -O $HOME_BIN/master/watch https://raw.githubusercontent.com/cm-hirano-shigetoshi/watch-zsh/master/watch
+        chmod +x $HOME_BIN/master/watch
+    fi
+}
+
 check
 coreutils
 fzf
@@ -73,3 +83,4 @@ karabiner
 tmux
 zsh
 nvim
+convenient_tools
