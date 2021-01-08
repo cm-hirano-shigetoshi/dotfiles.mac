@@ -66,6 +66,13 @@ nvim() {
     fi
 }
 
+pyenv() {
+    if ! which pyenv >/dev/null 2>&1; then
+        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+        git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+    fi
+}
+
 convenient_tools() {
     if ! which pwgen >/dev/null 2>&1; then
         brew install pwgen
@@ -83,4 +90,5 @@ karabiner
 tmux
 zsh
 nvim
+pyenv
 convenient_tools
