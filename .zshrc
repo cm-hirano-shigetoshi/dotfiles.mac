@@ -42,6 +42,14 @@ if [[ -n $TMUX ]]; then
   zinit ice wait'!0' src"ninja.zsh" silent; zinit light cm-hirano-shigetoshi/cli-ninja
 
   #
+  # pyenv
+  #
+  export PYENV_ROOT="${HOME}/.pyenv"
+  export PATH="${PYENV_ROOT}/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+
+  #
   # 一般の設定
   #
   # Ctrl+s（ターミナルロック）を無効化。これがないとCtrl+sを含むキーバインドが無効になる。
@@ -54,9 +62,6 @@ if [[ -n $TMUX ]]; then
   setopt hist_reduce_blanks
   # 直前と同じヒストリは記録しない
   setopt hist_ignore_dups
-
-  # 実験中のファイルはbin/developに置く
-  PATH="$HOME/bin/develop:$PATH"
 
   #
   # 補完の設定
@@ -87,10 +92,11 @@ if [[ -n $TMUX ]]; then
     alias x86='arch -arch x86_64'
   fi
 
-  if [[ $(uname -m) != "arm64" ]]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH="${PYENV_ROOT}/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-  fi
+  # 意図的に使いたいものは最後に加える
+  PATH="$HOME/bin/master:$PATH"
+  # 実験中のファイルはbin/developに置く
+  PATH="$HOME/bin/develop:$PATH"
+
+  typeset -U path PATH
+
 fi
