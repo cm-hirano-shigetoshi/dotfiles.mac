@@ -6,11 +6,11 @@ HOME_BIN="$HOME/bin"
 GIT_REPOSITORY_BASE="$HOME/OSS"
 
 check() {
-    if ! which brew >/dev/null 2>&1; then
+    if ! which brew >/dev/null; then
         echo "[Error] brew is not installed" >&2
         exit 1
     fi
-    if ! which git >/dev/null 2>&1; then
+    if ! which git >/dev/null; then
         echo "[Error] git is not installed" >&2
         exit 1
     fi
@@ -28,10 +28,10 @@ coreutils() {
 }
 
 fzf() {
-    if ! which fzf >/dev/null 2>&1; then
+    if ! which fzf >/dev/null; then
         brew install fzf
     fi
-    if ! which fzfyml3 >/dev/null 2>&1; then
+    if ! which fzfyml3 >/dev/null; then
         mkdir -p "$GIT_REPOSITORY_BASE"
         cd "$GIT_REPOSITORY_BASE"
         git clone https://github.com/cm-hirano-shigetoshi/fzfyml3
@@ -44,7 +44,7 @@ fzf() {
 
 karabiner() {
     mkdir -p $HOME/.config/karabiner
-    ln -sf $DOTFILES/karabiner.json $HOME/.config/karabiner/karabiner.json
+    cp $DOTFILES/karabiner.json $HOME/.config/karabiner/karabiner.json
 }
 
 tmux() {
@@ -61,23 +61,23 @@ nvim() {
     rm -fr $HOME/.config/nvim
     ln -s $DOTFILES/nvim $HOME/.config/nvim
     mkdir -p $HOME/.nvim/backup
-    if ! which nvim >/dev/null 2>&1; then
+    if ! which nvim >/dev/null; then
         echo "[SKIP] neovim is not installed"
     fi
 }
 
 pyenv() {
-    if ! which pyenv >/dev/null 2>&1; then
+    if ! which pyenv >/dev/null; then
         git clone https://github.com/pyenv/pyenv.git ~/.pyenv
         git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
     fi
 }
 
 convenient_tools() {
-    if ! which pwgen >/dev/null 2>&1; then
+    if ! which pwgen >/dev/null; then
         brew install pwgen
     fi
-    if ! which watch >/dev/null 2>&1; then
+    if ! which watch >/dev/null; then
         wget -O $HOME_BIN/master/watch https://raw.githubusercontent.com/cm-hirano-shigetoshi/watch-zsh/master/watch
         chmod +x $HOME_BIN/master/watch
     fi
