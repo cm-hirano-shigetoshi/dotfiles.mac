@@ -87,9 +87,16 @@ if [[ -n $TMUX ]]; then
     export EDITOR="nvim"
   fi
 
-  if [[ $(uname -m) = "arm64" ]]; then
+  if which arch >/dev/null 2>&1 && [[ $(arch) = "arm64" ]]; then
     alias arm64='arch -arch arm64'
     alias x86='arch -arch x86_64'
+  fi
+
+  #
+  # Java
+  #
+  if [[ -d /Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home ]]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home
   fi
 
   # 意図的に使いたいものは最後に加える
