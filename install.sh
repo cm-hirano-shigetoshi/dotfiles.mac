@@ -17,10 +17,10 @@ check() {
 }
 
 coreutils() {
-    if ! brew list --formula | grep -qFx "coreutils"; then
+    if ! which -a ls | grep -qF 'coreutils'; then
         brew install coreutils
     fi
-    if ! brew list --formula | grep -qFx "gnu-sed"; then
+    if ! which -a sed | grep -qF 'gnu-sed'; then
         brew install gnu-sed
     fi
     rm -f $HOME_BIN/master/uname
