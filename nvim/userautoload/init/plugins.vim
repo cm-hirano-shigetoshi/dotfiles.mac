@@ -4,6 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'https://github.com/nvie/vim-flake8'
     Plug 'https://github.com/osyo-manga/vim-brightest'
     "Plug 'https://github.com/t9md/vim-quickhl'
+    Plug 'https://github.com/mechatroner/rainbow_csv'
     Plug 'https://github.com/cm-hirano-shigetoshi/WordSearch.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/TimeMachine.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/RecentUse.vim'
