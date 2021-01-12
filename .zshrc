@@ -81,7 +81,7 @@ if [[ -n $TMUX ]]; then
   #
   # 一時的な設定
   #
-  if [[ $(uname -m) = "arm64" ]]; then
+  if which -p ls | grep -qF 'coreutils'; then
     alias ls='ls --color=auto'
   else
     alias ls='ls -G'
