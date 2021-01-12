@@ -86,15 +86,15 @@ if [[ -n $TMUX ]]; then
   else
     alias ls='ls -G'
   fi
-  if which nvim >/dev/null 2>&1; then
+  if which -p nvim >/dev/null 2>&1; then
     alias vim='nvim'
     export EDITOR="nvim"
   fi
-
-  if which arch >/dev/null 2>&1 && [[ $(arch) = "arm64" ]]; then
+  if which -p arch >/dev/null 2>&1 && [[ $(arch) = "arm64" ]]; then
     alias arm64='arch -arch arm64'
     alias x86='arch -arch x86_64'
   fi
+  alias which="$(where which | grep -v 'built-in' | head -1)"
 
   #
   # Java
