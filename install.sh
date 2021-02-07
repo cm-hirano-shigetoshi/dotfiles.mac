@@ -81,6 +81,10 @@ convenient_tools() {
         wget -O $HOME_BIN/master/watch https://raw.githubusercontent.com/cm-hirano-shigetoshi/watch-zsh/master/watch
         chmod +x $HOME_BIN/master/watch
     fi
+    if ! which jqable >/dev/null; then
+        wget -O $HOME_BIN/master/jqable https://raw.githubusercontent.com/cm-hirano-shigetoshi/jqable/master/jqable
+        chmod +x $HOME_BIN/master/jqable
+    fi
 }
 
 check
