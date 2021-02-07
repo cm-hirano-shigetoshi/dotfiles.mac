@@ -54,6 +54,12 @@ if [[ -n $TMUX ]]; then
   fi
 
   #
+  # direnv
+  #
+  if which -p direnv >/dev/null; then
+    eval "$(direnv hook zsh)"
+  fi
+  #
   # 一般の設定
   #
   # Ctrl+s（ターミナルロック）を無効化。これがないとCtrl+sを含むキーバインドが無効になる。
