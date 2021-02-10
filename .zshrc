@@ -92,10 +92,7 @@ if [[ -n $TMUX ]]; then
   else
     alias ls='ls -G'
   fi
-  if which -p nvim >/dev/null 2>&1; then
-    alias vim='nvim'
-    export EDITOR="nvim"
-  fi
+  export EDITOR="nvim"
   if which -p arch >/dev/null 2>&1 && [[ $(arch) = "arm64" ]]; then
     alias arm64='arch -arch arm64'
     alias x86='arch -arch x86_64'

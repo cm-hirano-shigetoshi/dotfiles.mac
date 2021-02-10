@@ -56,13 +56,26 @@ zsh() {
     ln -sf $DOTFILES/.zprofile $HOME/.zprofile
 }
 
+vim() {
+    rm -fr $HOME/.vim
+    ln -s $DOTFILES/.vim $HOME/.vim
+    ln -sf $DOTFILES/.vimrc $HOME/.vimrc
+    if [[ ! -s ~/.vim/autoload/plug.vim ]]; then
+        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+                https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    fi
+}
+
 nvim() {
-    mkdir -p $HOME/.config
-    rm -fr $HOME/.config/nvim
-    ln -s $DOTFILES/nvim $HOME/.config/nvim
-    mkdir -p $HOME/.nvim/backup
-    if ! which nvim >/dev/null; then
-        echo "[SKIP] neovim is not installed"
+    if which nvim >/dev/null; then
+        mkdir -p $HOME/.config
+        rm -fr $HOME/.config/nvim
+        ln -s $DOTFILES/nvim $HOME/.config/nvim
+        mkdir -p $HOME/.nvim/backup
+        if [[ ! -s $HOME/.local/share/nvim/site/autoload/plug.vim ]]; then
+            sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+                   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+        fi
     fi
 }
 
@@ -93,6 +106,7 @@ fzf
 karabiner
 tmux
 zsh
+vim
 nvim
 pyenv
 convenient_tools
