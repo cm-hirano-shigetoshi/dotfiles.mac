@@ -35,6 +35,8 @@ set fileignorecase
 set isfname-=\=
 " 最後の行に改行がないファイルをそのまま扱う
 set nofixeol
+" 検索のハイライト
+set hlsearch
 " mapleaderの設定
 let mapleader = " "
 
