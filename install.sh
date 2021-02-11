@@ -4,6 +4,7 @@ set -eu
 DOTFILES=$(dirname $(python -c "import os; print(os.path.realpath('$0'))"))
 HOME_BIN="$HOME/bin"
 GIT_REPOSITORY_BASE="$HOME/OSS"
+BREW_HOME="$(dirname $(dirname $(which brew)))"
 
 check() {
     if ! which brew >/dev/null; then
@@ -79,7 +80,11 @@ nvim() {
     fi
 }
 
-pyenv() {
+python() {
+    if [[ ! -s $BREW_HOME/bin/python3 ]]; then
+        brew install python3
+    fi
+    ln -sf python3 $BREW_HOME/bin/python
     if ! which pyenv >/dev/null; then
         git clone https://github.com/pyenv/pyenv.git ~/.pyenv
         git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
@@ -108,5 +113,5 @@ tmux
 zsh
 vim
 nvim
-pyenv
+python
 convenient_tools
