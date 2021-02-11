@@ -48,18 +48,18 @@ karabiner() {
 }
 
 tmux() {
-    ln -sf $DOTFILES/.tmux.conf $HOME/.tmux.conf
+    ln -sf $DOTFILES/tmux.conf $HOME/.tmux.conf
 }
 
 zsh() {
-    ln -sf $DOTFILES/.zshrc $HOME/.zshrc
-    ln -sf $DOTFILES/.zprofile $HOME/.zprofile
+    ln -sf $DOTFILES/zshrc $HOME/.zshrc
+    ln -sf $DOTFILES/zprofile $HOME/.zprofile
 }
 
 vim() {
     rm -fr $HOME/.vim
-    ln -s $DOTFILES/.vim $HOME/.vim
-    ln -sf $DOTFILES/.vimrc $HOME/.vimrc
+    ln -s $DOTFILES/vim $HOME/.vim
+    ln -sf $DOTFILES/vimrc $HOME/.vimrc
     if [[ ! -s ~/.vim/autoload/plug.vim ]]; then
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
                 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
