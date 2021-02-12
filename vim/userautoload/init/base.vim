@@ -37,6 +37,8 @@ set isfname-=\=
 set nofixeol
 " 検索のハイライト
 set hlsearch
+" 数値の増減は10進数
+set nf=""
 " mapleaderの設定
 let mapleader = " "
 
