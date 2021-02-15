@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
     "Plug 'https://github.com/t9md/vim-quickhl'
     Plug 'https://github.com/mechatroner/rainbow_csv'
     Plug 'https://github.com/easymotion/vim-easymotion'
+    Plug 'https://github.com/obcat/vim-sclow'
     Plug 'https://github.com/cm-hirano-shigetoshi/WordSearch.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/TimeMachine.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/RecentUse.vim'
