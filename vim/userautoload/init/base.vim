@@ -4,7 +4,7 @@ set cpoptions+=W
 set noswapfile
 " backupファイルの出力先
 set backup
-set backupdir=~/.nvim/backup
+set backupdir=~/.vim/backup
 " 折り返したときは行番号の部分にも描画する
 set cpoptions+=n
 " 現在のバッファに変更があっても他のバッファに移れる
@@ -39,6 +39,12 @@ set nofixeol
 set hlsearch
 " 数値の増減は10進数
 set nf=""
+" ステータスラインを常に表示する
+set laststatus=2
+" ステータスラインにフルパスを表示する
+set statusline=%m%F%=\ [%{&fileencoding}/%{&fileformat}]
+" インデントもBSで消せる
+set backspace=indent,eol,start
 " mapleaderの設定
 let mapleader = " "
 
