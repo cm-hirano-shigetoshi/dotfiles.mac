@@ -1,2 +1,3 @@
 vim/autoload/Plug.vim
-vim/plugged
+vim/plugged/
+vim/backup/
