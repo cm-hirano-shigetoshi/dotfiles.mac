@@ -1,10 +1,12 @@
-call plug#begin('~/.local/share/nvim/plugged')
+call plug#begin('~/.vim/plugged')
     Plug 'https://github.com/tpope/vim-repeat'
     Plug 'https://github.com/tpope/vim-surround'
     Plug 'https://github.com/nvie/vim-flake8'
     Plug 'https://github.com/osyo-manga/vim-brightest'
     "Plug 'https://github.com/t9md/vim-quickhl'
     Plug 'https://github.com/mechatroner/rainbow_csv'
+    Plug 'https://github.com/easymotion/vim-easymotion'
+    Plug 'https://github.com/obcat/vim-sclow'
     Plug 'https://github.com/cm-hirano-shigetoshi/WordSearch.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/TimeMachine.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/RecentUse.vim'
@@ -12,7 +14,6 @@ call plug#begin('~/.local/share/nvim/plugged')
     Plug 'https://github.com/cm-hirano-shigetoshi/SearchAllBuffers.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/Buffers.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/vim-csvq'
-    Plug 'https://github.com/cm-hirano-shigetoshi/vim-easymotion'
 call plug#end()
 
 "
@@ -29,7 +30,7 @@ let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_migemo = 1
 let g:EasyMotion_do_mapping_textobj = 1
-nmap s <Plug>(easymotion-overwin-f)
+nmap s <Plug>(easymotion-bd-f)
 vmap s <Plug>(easymotion-bd-f)
 omap s <Plug>(easymotion-bd-f)
 

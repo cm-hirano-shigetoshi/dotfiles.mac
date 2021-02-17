@@ -1,3 +1,5 @@
+bindkey -e
+
 if [[ -n $TMUX ]]; then
   #
   # Zinitのおまじない
@@ -42,6 +44,22 @@ if [[ -n $TMUX ]]; then
   zinit ice wait'!0' src"ninja.zsh" silent; zinit light cm-hirano-shigetoshi/cli-ninja
 
   #
+  # pyenv
+  #
+  if [[ -d "${HOME}/.pyenv" ]]; then
+    export PYENV_ROOT="${HOME}/.pyenv"
+    export PATH="${PYENV_ROOT}/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+  fi
+
+  #
+  # direnv
+  #
+  if which -p direnv >/dev/null; then
+    eval "$(direnv hook zsh)"
+  fi
+  #
   # 一般の設定
   #
   # Ctrl+s（ターミナルロック）を無効化。これがないとCtrl+sを含むキーバインドが無効になる。
@@ -54,9 +72,6 @@ if [[ -n $TMUX ]]; then
   setopt hist_reduce_blanks
   # 直前と同じヒストリは記録しない
   setopt hist_ignore_dups
-
-  # 実験中のファイルはbin/developに置く
-  PATH="$HOME/bin/develop:$PATH"
 
   #
   # 補完の設定
@@ -72,31 +87,30 @@ if [[ -n $TMUX ]]; then
   #
   # 一時的な設定
   #
-  if [[ $(uname -m) = "arm64" ]]; then
+  if which -p ls | grep -qF 'coreutils'; then
     alias ls='ls --color=auto'
   else
     alias ls='ls -G'
   fi
-  if which nvim >/dev/null 2>&1; then
-    alias vim='nvim'
-    export EDITOR="nvim"
+  export EDITOR="nvim"
+  if which -p arch >/dev/null 2>&1 && [[ $(arch) = "arm64" ]]; then
+    alias arm64='arch -arch arm64'
+    alias x86='arch -arch x86_64'
   fi
+  alias which="$(where which | grep -v 'built-in' | head -1)"
 
   #
-  # fzfの設定
+  # Java
   #
-  FZF_DEFAULT_OPTS=""
-  FZF_DEFAULT_OPTS+=" --exact --no-mouse --ansi"
-  FZF_DEFAULT_OPTS+=" --preview-window=up:wrap"
-  FZF_DEFAULT_OPTS+=" --preview='echo {}'"
-  FZF_DEFAULT_OPTS+=" --bind='ctrl-s:toggle-sort'"
-  export FZF_DEFAULT_OPTS
-
-
-  if [[ $(uname -m) != "arm64" ]]; then
-    export PYENV_ROOT="${HOME}/.pyenv"
-    export PATH="${PYENV_ROOT}/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+  if [[ -d /Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home ]]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-15.jdk/Contents/Home
   fi
+
+  # 意図的に使いたいものは最後に加える
+  PATH="$HOME/bin/master:$PATH"
+  # 実験中のファイルはbin/developに置く
+  PATH="$HOME/bin/develop:$PATH"
+
+  typeset -U path PATH
+
 fi
