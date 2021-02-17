@@ -103,6 +103,10 @@ convenient_tools() {
         wget -O $HOME_BIN/master/jqable https://raw.githubusercontent.com/cm-hirano-shigetoshi/jqable/master/jqable
         chmod +x $HOME_BIN/master/jqable
     fi
+    if ! which tovim >/dev/null; then
+        wget -O $HOME_BIN/master/tovim https://raw.githubusercontent.com/cm-hirano-shigetoshi/tovim/master/tovim
+        chmod +x $HOME_BIN/master/tovim
+    fi
 }
 
 check
