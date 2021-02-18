@@ -51,6 +51,7 @@ if [[ -n $TMUX ]]; then
     export PATH="${PYENV_ROOT}/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
+    rm -f $PYENV_ROOT/shims/python $PYENV_ROOT/shims/pip
   fi
 
   #

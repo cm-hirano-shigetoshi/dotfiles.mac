@@ -85,6 +85,7 @@ python() {
         brew install python3
     fi
     ln -sf python3 $BREW_HOME/bin/python
+    ln -sf pip3 $BREW_HOME/bin/pip
     if ! which pyenv >/dev/null; then
         git clone https://github.com/pyenv/pyenv.git ~/.pyenv
         git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
