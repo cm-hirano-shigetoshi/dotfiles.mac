@@ -45,6 +45,8 @@ set laststatus=2
 set statusline=%m%F%=\ [%{&fileencoding}/%{&fileformat}]
 " インデントもBSで消せる
 set backspace=indent,eol,start
+" インクリメンタルサーチ
+set incsearch
 " mapleaderの設定
 let mapleader = " "
 

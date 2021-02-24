@@ -16,7 +16,6 @@ else
     export EDITOR=vim
 fi
 
-export FZFYML3_PYTHON="/opt/homebrew/bin/python3"
 FZF_DEFAULT_OPTS=""
 FZF_DEFAULT_OPTS+=" --exact --no-mouse --ansi"
 FZF_DEFAULT_OPTS+=" --preview-window=up:wrap"
