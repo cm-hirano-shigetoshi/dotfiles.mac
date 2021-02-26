@@ -68,6 +68,7 @@ nnoremap <C-o> <C-o>zz
 inoremap <C-c> <ESC>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
+inoremap <expr><CR>  pumvisible() ? "<Esc>" : "<CR>"
 
 cnoremap <C-a> <C-b>
 cnoremap <C-b> <Left>

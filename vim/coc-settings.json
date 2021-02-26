@@ -1,0 +1,6 @@
+{
+    "coc.source.around.enable": false,
+    "coc.source.buffer.enable": false,
+    "suggest.autoTrigger": "none",
+    "diagnostic.enable": false
+}

@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'https://github.com/mechatroner/rainbow_csv'
     Plug 'https://github.com/easymotion/vim-easymotion'
     Plug 'https://github.com/obcat/vim-sclow'
+    Plug 'https://github.com/neoclide/coc.nvim'
     Plug 'https://github.com/cm-hirano-shigetoshi/WordSearch.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/TimeMachine.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/RecentUse.vim'
@@ -52,4 +53,19 @@ let g:brightest#pattern = '\k\+'
 "vim-csv
 "
 nmap <F8> <Plug>(CSVQ)
+
+"
+"coc.nvim
+"
+nmap <silent> gd <Plug>(coc-definition)
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
 
