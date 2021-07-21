@@ -36,12 +36,12 @@ if [[ -n $TMUX ]]; then
   zinit ice wait'!0' silent; zinit light cm-hirano-shigetoshi/snippet
   # ファイル名検索
   zinit ice wait'!0' src"select-files.zsh" silent; zinit light cm-hirano-shigetoshi/select-files
-  # aws cliコマンド拡張
-  #zinit ice wait'!0' src"fzf-aws-help.zsh" silent; zinit light cm-hirano-shigetoshi/fzf-aws-help
   # git
   zinit ice wait'!0' src"git.zsh" silent; zinit light cm-hirano-shigetoshi/fzf-git
   # Ninja
   zinit ice wait'!0' src"ninja.zsh" silent; zinit light cm-hirano-shigetoshi/cli-ninja
+  # aws cliコマンド拡張
+  zinit ice wait'!0' src"fzf-aws-cli-completor.zsh" silent; zinit light cm-hirano-shigetoshi/fzf-aws-cli-completor
 
   #
   # pyenv
