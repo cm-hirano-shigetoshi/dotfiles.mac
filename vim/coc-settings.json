@@ -2,5 +2,10 @@
     "coc.source.around.enable": false,
     "coc.source.buffer.enable": false,
     "suggest.autoTrigger": "none",
-    "diagnostic.enable": false
+    "diagnostic.enable": false,
+
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true,
+    //
 }
