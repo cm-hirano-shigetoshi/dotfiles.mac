@@ -17,9 +17,7 @@ else
 fi
 
 FZF_DEFAULT_OPTS=""
-FZF_DEFAULT_OPTS+=" --exact --no-mouse --ansi"
-FZF_DEFAULT_OPTS+=" --preview-window=up:wrap"
-FZF_DEFAULT_OPTS+=" --preview='echo {}'"
+FZF_DEFAULT_OPTS+=" --exact --no-mouse"
 FZF_DEFAULT_OPTS+=" --bind='ctrl-s:toggle-sort'"
 export FZF_DEFAULT_OPTS
 
