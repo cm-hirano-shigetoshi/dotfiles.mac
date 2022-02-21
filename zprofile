@@ -10,11 +10,7 @@ else
 fi
 
 export DOTFILES="$HOME/dotfiles.mac"
-if which nvim >/dev/null; then
-    export EDITOR=nvim
-else
-    export EDITOR=vim
-fi
+export EDITOR=vim
 
 FZF_DEFAULT_OPTS=""
 FZF_DEFAULT_OPTS+=" --exact --no-mouse"
