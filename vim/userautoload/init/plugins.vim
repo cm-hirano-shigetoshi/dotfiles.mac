@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'https://github.com/mechatroner/rainbow_csv'
     Plug 'https://github.com/easymotion/vim-easymotion'
     Plug 'https://github.com/obcat/vim-sclow'
+    Plug 'https://github.com/lambdalisue/reword.vim'
     Plug 'https://github.com/neoclide/coc.nvim'
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'https://github.com/cm-hirano-shigetoshi/WordSearch.vim'
