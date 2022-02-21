@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'https://github.com/easymotion/vim-easymotion'
     Plug 'https://github.com/obcat/vim-sclow'
     Plug 'https://github.com/neoclide/coc.nvim'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
     Plug 'https://github.com/cm-hirano-shigetoshi/WordSearch.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/TimeMachine.vim'
     Plug 'https://github.com/cm-hirano-shigetoshi/RecentUse.vim'
@@ -69,3 +70,7 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+"
+"markdown-preview
+"
+let g:mkdp_command_for_global = 1
